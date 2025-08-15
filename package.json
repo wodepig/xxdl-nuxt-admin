@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "xxdl-nuxt-admin",
   "type": "module",
   "private": true,
   "scripts": {
@@ -10,7 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/ui": "4.0.0-alpha.0",
     "nuxt": "^4.0.3",
+    "nuxt-auth-utils": "0.5.23",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },
