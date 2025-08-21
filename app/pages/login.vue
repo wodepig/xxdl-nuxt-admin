@@ -1,7 +1,13 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <div>
+    登陆
+  </div>
 </template>
+
 <script lang="ts" setup>
+
 </script>
+
+<style>
+
+</style>

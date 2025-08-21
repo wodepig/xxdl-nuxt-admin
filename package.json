@@ -11,10 +11,16 @@
   },
   "dependencies": {
     "@nuxt/ui": "4.0.0-alpha.0",
+    "@pinia/nuxt": "^0.11.2",
     "nuxt": "^4.0.3",
     "nuxt-auth-utils": "0.5.23",
+    "pinia": "^3.0.3",
+    "pinia-plugin-persistedstate": "^4.5.0",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },
-  "packageManager": "pnpm@10.8.1+sha256.d8b2ebbc65cf02c349eca6b45c9640b910f16b6adebdb7b926e9db440e47cac7"
+  "packageManager": "pnpm@10.8.1+sha256.d8b2ebbc65cf02c349eca6b45c9640b910f16b6adebdb7b926e9db440e47cac7",
+  "devDependencies": {
+    "@iconify-json/tabler": "^1.2.22"
+  }
 }
