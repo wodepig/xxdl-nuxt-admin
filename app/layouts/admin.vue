@@ -60,17 +60,7 @@ const links = [[{
       open.value = false
     }
   }]
-}], [{
-  label: 'Feedback',
-  icon: 'i-lucide-message-circle',
-  to: 'https://github.com/nuxt-ui-pro/dashboard',
-  target: '_blank'
-}, {
-  label: 'Help & Support',
-  icon: 'i-lucide-info',
-  to: 'https://github.com/nuxt/ui-pro',
-  target: '_blank'
-}]] satisfies NavigationMenuItem[][]
+}], []] satisfies NavigationMenuItem[][]
 
 const groups = computed(() => [{
   id: 'links',
@@ -136,7 +126,7 @@ onMounted(async () => {
       </template>
 
       <template #default="{ collapsed }">
-        <UDashboardSearchButton :collapsed="collapsed" class="bg-transparent ring-default" />
+        <!-- <UDashboardSearchButton :collapsed="collapsed" class="bg-transparent ring-default" /> -->
 
         <UNavigationMenu
           :collapsed="collapsed"
@@ -145,24 +135,37 @@ onMounted(async () => {
           tooltip
           popover
         />
-
-        <UNavigationMenu
-          :collapsed="collapsed"
-          :items="links[1]"
-          orientation="vertical"
-          tooltip
-          class="mt-auto"
-        />
       </template>
 
-      <template #footer="{ collapsed }">
-        <UserMenu :collapsed="collapsed" />
-      </template>
+  
     </UDashboardSidebar>
 
-    <UDashboardSearch :groups="groups" />
+    <!-- <UDashboardSearch :groups="groups" /> -->
+<UDashboardPanel id="home">
+   <template #header>
+      <UDashboardNavbar :ui="{ right: 'gap-3' }">
+        
+     <template #leading>
+          <UDashboardSidebarCollapse />
+        </template>
+        <template #title>
+          <!-- todo 后面做导航 -->
+           首页
+        </template>
+        <template #right>
+          <BaseSearch />
+          <BaseSwitchLocal />
 
-    <slot />
+
+          <UButton>2</UButton>
+        </template>
+        </UDashboardNavbar>
+        </template>
+         <template #body>
+           <slot />
+         </template>
+</UDashboardPanel>
+    
 
     <NotificationsSlideover />
   </UDashboardGroup>

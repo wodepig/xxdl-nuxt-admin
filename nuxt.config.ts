@@ -20,13 +20,13 @@ export default defineNuxtConfig({
   },
     i18n: {
       strategy: 'no_prefix',
-    locales: [
-      { code: 'en', iso: 'en-US', dir: 'ltr' },
-      { code: 'zh', iso: 'zh-CN', dir: 'ltr' }
-    ],
-    defaultLocale: 'en',
-    translationDir: 'app/locales',
-    meta: true,
-  },
+      locales: [
+        { code: 'en', iso: 'en-US', dir: 'ltr', name: 'English' },
+        { code: 'zh', iso: 'zh-CN', dir: 'ltr', name: '中文' }
+      ],
+      defaultLocale: 'en',
+      translationDir: 'app/locales',
+      meta: true,
+    },
 
 })
