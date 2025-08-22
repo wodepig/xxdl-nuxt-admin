@@ -3,8 +3,16 @@
 <template>
   layout是: {{ useAppStore().layout }}
   <UDashboardPanel id="inbox-1" resizable >
-    1
+         <SwitchLocal />
+      <div>
+        下面是值:
+      </div>
+    {{ $t('key1') }}
+    {{ $t('key2') }}
+    {{ concc }}
+
   </UDashboardPanel>
+
   <!-- <UDashboardPanel id="inbox-1" resizable >
     1
   </UDashboardPanel>
@@ -20,6 +28,13 @@
 </template>
 
 <script setup lang="ts">
+import { useNuxtApp } from '#imports'
+
+
+const { $t } = useNuxtApp()
+const concc = computed(() => {
+  return $t('key1')
+})
 const switchLayout = (layout: string) => {
   layout = layout
   useAppStore().layout = layout
