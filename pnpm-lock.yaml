@@ -36,6 +36,9 @@ importers:
         specifier: ^4.5.1
         version: 4.5.1(vue@3.5.19(typescript@5.9.2))
     devDependencies:
+      '@iconify-json/lucide':
+        specifier: ^1.2.63
+        version: 1.2.63
       '@iconify-json/tabler':
         specifier: ^1.2.22
         version: 1.2.22
@@ -564,6 +567,9 @@ packages:
 
   '@floating-ui/vue@1.1.9':
     resolution: {integrity: sha512-BfNqNW6KA83Nexspgb9DZuz578R7HT8MZw1CfK9I6Ah4QReNWEJsXWHN+SdmOVLNGmTPDi+fDT535Df5PzMLbQ==}
+
+  '@iconify-json/lucide@1.2.63':
+    resolution: {integrity: sha512-4rRKhUhEh4TsBq5ypbimHbBA6ApIcDLR9gzjnJT2cvUn2+rG+oG4TPXgHLFmIaRkHKYcMKukdcfOUaJbM/G4pQ==}
 
   '@iconify-json/tabler@1.2.22':
     resolution: {integrity: sha512-KmCtTzZyz7dtszdQGJ5wbWqko6exhI38e4aCQqWZE1Z2wGUqBsMXrRWawXkAp6/XNBebt54h0lcxFCaTYBwFJg==}
@@ -5113,6 +5119,10 @@ snapshots:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+
+  '@iconify-json/lucide@1.2.63':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/tabler@1.2.22':
     dependencies:

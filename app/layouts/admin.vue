@@ -155,9 +155,8 @@ onMounted(async () => {
         <template #right>
           <BaseSearch />
           <BaseSwitchLocal />
-
-
-          <UButton>2</UButton>
+          <BaseSwitchTheme />
+          <UserProfile />
         </template>
         </UDashboardNavbar>
         </template>
