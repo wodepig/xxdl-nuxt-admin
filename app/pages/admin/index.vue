@@ -1,42 +1,68 @@
-
+<script setup lang="ts">
+const users = ref([
+  {
+    name: 'Benjamin Canac',
+    description: 'benjamincanac',
+    to: 'https://github.com/benjamincanac',
+    target: '_blank',
+    avatar: {
+      src: 'https://github.com/benjamincanac.png',
+      alt: 'benjamincanac'
+    }
+  },
+  {
+    name: 'Sylvain Marroufin',
+    description: 'smarroufin',
+    to: 'https://github.com/smarroufin',
+    target: '_blank',
+    avatar: {
+      src: 'https://github.com/smarroufin.png',
+      alt: 'smarroufin'
+    }
+  },
+  {
+    name: 'Sébastien Chopin',
+    description: 'atinux',
+    to: 'https://github.com/atinux',
+    target: '_blank',
+    avatar: {
+      src: 'https://github.com/atinux.png',
+      alt: 'atinux'
+    }
+  },
+  {
+    name: 'Romain Hamel',
+    description: 'romhml',
+    to: 'https://github.com/romhml',
+    target: '_blank',
+    avatar: {
+      src: 'https://github.com/romhml.png',
+      alt: 'romhml'
+    }
+  }
+])
+</script>
 
 <template>
-  layout是: {{ useAppStore().layout }}
-  <UDashboardPanel id="inbox-1" resizable >
-         <SwitchLocal />
-      <div>
-        下面是值:
-      </div>
-    {{ $t('key1') }}
-    {{ $t('key2') }}
-    {{ concc }}
-
-  </UDashboardPanel>
-
-  <!-- <UDashboardPanel id="inbox-1" resizable >
-    1
-  </UDashboardPanel>
-
-  <UDashboardPanel id="inbox-2" class="hidden lg:flex" >
-    2
-  </UDashboardPanel>
-  <UDashboardPanel id="inbox-3" class="hidden lg:flex" >
-    3
-  </UDashboardPanel> -->
-  <UButton @click="switchLayout('admin')">管理员</UButton>
-  <UButton @click="switchLayout('user')">用户</UButton>
+  <div class="flex h-1/10 gap-2 w-1/2">
+ <UButton>hello</UButton>
+ <UButton color="neutral">hello</UButton>
+  </div>
+ 
+  <UPageList>
+    <UPageCard
+      v-for="(user, index) in users"
+      :key="index"
+      :to="user.to"
+      :target="user.target"
+    >
+      <template #body>
+        <UUser :name="user.name" :description="user.description" :avatar="user.avatar" size="xl" class="relative" />
+      </template>
+    </UPageCard>
+  </UPageList>
+  <div class="h-[555px] rounded-3xl bg-red-50">
+hello
+  </div>
 </template>
 
-<script setup lang="ts">
-import { useNuxtApp } from '#imports'
-
-
-const { $t } = useNuxtApp()
-const concc = computed(() => {
-  return $t('key1')
-})
-const switchLayout = (layout: string) => {
-  layout = layout
-  useAppStore().layout = layout
-}
-</script>

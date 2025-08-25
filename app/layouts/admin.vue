@@ -155,7 +155,7 @@ onMounted(async () => {
         <template #right>
           <BaseSearch />
           <BaseSwitchLocal />
-          <BaseSwitchTheme />
+          <BaseThemePick />
           <UserProfile />
         </template>
         </UDashboardNavbar>
@@ -163,9 +163,15 @@ onMounted(async () => {
          <template #body>
            <slot />
          </template>
+         <template #footer>
+          <div class="text-center ">
+            PowerBy nuxt
+          </div>
+        </template>
+
 </UDashboardPanel>
     
 
-    <NotificationsSlideover />
+    <!-- <NotificationsSlideover /> -->
   </UDashboardGroup>
 </template>
