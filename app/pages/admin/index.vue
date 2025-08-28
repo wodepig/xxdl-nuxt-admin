@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import HeaderBanner from './home/components/header-banner.vue'
+import CardData from './home/components/card-data.vue'
+import LineChart from './home/components/line-chart.vue'
+import PieChart from './home/components/pie-chart.vue'
 const users = ref([
   {
     name: 'Benjamin Canac',
@@ -44,25 +48,31 @@ const users = ref([
 </script>
 
 <template>
-  <div class="flex h-1/10 gap-2 w-1/2">
- <UButton>hello</UButton>
- <UButton color="neutral">hello</UButton>
-  </div>
- 
+   <!-- <UPage> -->
+  <!-- <UPageBody class="bg-amber-300"> -->
+
+  
   <UPageList>
-    <UPageCard
-      v-for="(user, index) in users"
-      :key="index"
-      :to="user.to"
-      :target="user.target"
-    >
-      <template #body>
-        <UUser :name="user.name" :description="user.description" :avatar="user.avatar" size="xl" class="relative" />
-      </template>
-    </UPageCard>
+    
+    <HeaderBanner />
   </UPageList>
-  <div class="h-[555px] rounded-3xl bg-red-50">
+  <UPageList class="bg-red-200">
+<CardData/>
+  </UPageList>
+   <UPageList class="bg-blue-200 ">
+    <div class="grid grid-cols-2 gap-4">
+      <LineChart/>
+      <PieChart/>
+    </div>
+  </UPageList>
+     <UPageList class="bg-green-200 ">
+    4
+  </UPageList>
+<!-- </UPageBody> -->
+<!-- </UPage> -->
+
+  <!-- <div class="h-[555px] rounded-3xl bg-red-50">
 hello
-  </div>
+  </div> -->
 </template>
 
