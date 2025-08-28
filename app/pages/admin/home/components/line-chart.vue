@@ -126,7 +126,7 @@ mockData()
 
 <template>
   <UCard>
-    <div class="h-[360px] border-0 shadow-sm rounded-lg">
+    <div class="h-[360px]   rounded-lg">
       <VChart :option="options" autoresize />
     </div>
   </UCard>

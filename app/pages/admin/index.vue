@@ -3,6 +3,8 @@ import HeaderBanner from './home/components/header-banner.vue'
 import CardData from './home/components/card-data.vue'
 import LineChart from './home/components/line-chart.vue'
 import PieChart from './home/components/pie-chart.vue'
+import ProjectNews from './home/components/project-news.vue'
+import CreativityBanner from './home/components/creativity-banner.vue'
 const users = ref([
   {
     name: 'Benjamin Canac',
@@ -60,13 +62,16 @@ const users = ref([
 <CardData/>
   </UPageList>
    <UPageList>
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <LineChart/>
       <PieChart/>
     </div>
   </UPageList>
-     <UPageList class="bg-green-200 ">
-    4
+     <UPageList  >
+     <div class="grid grid-cols-2 gap-4">
+      <ProjectNews/>
+      <CreativityBanner/>
+    </div>
   </UPageList>
 <!-- </UPageBody> -->
 <!-- </UPage> -->

@@ -55,6 +55,19 @@ async function mockData() {
     { name: 'rest', value: 30 },
   ]
 }
+const chartRef = ref<any>(null)
+// 监听窗口变化，自动调用 ECharts resize
+const handleResize = () => {
+  chartRef.value?.resize?.()
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize)
+})
 watch(
   () => $getLocale(),
   () => {
@@ -72,8 +85,8 @@ mockData()
 
 <template>
   <UCard>
-    <div class="h-[360px] border-0 shadow-sm rounded-lg">
-      <VChart :option="options" />
+    <div class="h-[360px]  rounded-lg flex justify-center items-center">
+      <VChart ref="chartRef" :option="options" />
     </div>
   </UCard>
 
