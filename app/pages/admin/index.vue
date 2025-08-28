@@ -56,10 +56,10 @@ const users = ref([
     
     <HeaderBanner />
   </UPageList>
-  <UPageList class="bg-red-200">
+  <UPageList>
 <CardData/>
   </UPageList>
-   <UPageList class="bg-blue-200 ">
+   <UPageList>
     <div class="grid grid-cols-2 gap-4">
       <LineChart/>
       <PieChart/>

@@ -2,9 +2,16 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['nuxt-auth-utils', '@nuxt/ui', '@pinia/nuxt','pinia-plugin-persistedstate/nuxt','nuxt-i18n-micro'],
+  modules: [
+    'nuxt-auth-utils',
+    '@nuxt/ui',
+    '@pinia/nuxt',
+    'pinia-plugin-persistedstate/nuxt',
+    'nuxt-i18n-micro',
+    'nuxt-echarts',
+  ],
   imports: {
-     // 自动引入stores目录下的文件
+    // 自动引入stores目录下的文件
     dirs: ['stores']
   },
   css: ['~/assets/css/main.css'],
@@ -18,15 +25,19 @@ export default defineNuxtConfig({
       'defineStore'
     ],
   },
-    i18n: {
-      strategy: 'no_prefix',
-      locales: [
-        { code: 'en', iso: 'en-US', dir: 'ltr', name: 'English' },
-        { code: 'zh', iso: 'zh-CN', dir: 'ltr', name: '中文' }
-      ],
-      defaultLocale: 'en',
-      translationDir: 'app/locales',
-      meta: true,
-    },
+  i18n: {
+    strategy: 'no_prefix',
+    locales: [
+      { code: 'en', iso: 'en-US', dir: 'ltr', name: 'English' },
+      { code: 'zh', iso: 'zh-CN', dir: 'ltr', name: '中文' }
+    ],
+    defaultLocale: 'en',
+    translationDir: 'app/locales',
+    meta: true,
+  },
+  echarts: {
+    charts: ['BarChart', 'LineChart', 'PieChart'],
+    components: ['DatasetComponent', 'GridComponent','TooltipComponent', 'LegendComponent'],
+  }
 
 })
